@@ -15,13 +15,12 @@ functional_areas:
   - Cloud
   - Setup
 ---
-QUESTION: Do we really want to support a full overwrite?
+<! -- QUESTION: Do we really want to support a full overwrite? -->
 
-The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code. When importing, you are force pushing your existing code in a Git repository over the {{site.data.var.ece}}'s Git `master` branch.
+The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code.
 
 {: .bs-callout .bs-callout-warning}
-Warning: When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master`. Any data, websites, stores, and so on will be lost.
-Before you continue, make sure there is nothing in your {{site.data.var.ece}} project you want to keep.
+When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master` which removes any existing data, sites, stores, and so on. Before you continue, make sure there is nothing in your {{site.data.var.ece}} project that you want to keep.
 
 ## Required information
 
@@ -36,6 +35,7 @@ Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c
 To create a remote Git reference:
 
 1.  Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+
 1.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
 
     ```
@@ -162,6 +162,7 @@ To drop and re-create the Cloud database:
     ```
 
 1.  At the `MariaDB [main]>` prompt, enter `exit`.
+
 1.  At the shell command prompt, enter the following command to re-create the database.
 
     ```
@@ -218,6 +219,7 @@ To update the unsecure base URL:
     ```
 
 1.  If the change was successful, enter `exit` to exit the `[Maria DB]` prompt.
+
 1.  Continue with the next section.
 
 {:.bs-callout .bs-callout-info}
@@ -238,6 +240,7 @@ To add your {{site.data.var.ee}} encryption key:
     ```
 
 1.  Open `app/etc/env.php` in a text editor.
+
 1.  Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
     ```php
@@ -299,7 +302,11 @@ To verify everything imported properly, perform the following tasks in your loca
     ```
 
 1.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the username and password of your {{site.data.var.ee}} system.
+
 1.  Make sure settings in the Admin are the same as your {{site.data.var.ee}} system.
+
 1.  Access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+
 1.  Make sure categories, products, and so on display as you expect.
+
 1.  Test everything thoroughly.
